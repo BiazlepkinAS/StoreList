@@ -101,11 +101,11 @@
 			children = (
 				75493AB92A7BEE2A006FB64E /* AppDelegate.swift */,
 				75493ABB2A7BEE2A006FB64E /* SceneDelegate.swift */,
-				75493ABF2A7BEE2A006FB64E /* Main.storyboard */,
+				75493AEB2A7BF9B5006FB64E /* StoreListController.swift */,
 				75493AC22A7BEE2C006FB64E /* Assets.xcassets */,
+				75493ABF2A7BEE2A006FB64E /* Main.storyboard */,
 				75493AC42A7BEE2C006FB64E /* LaunchScreen.storyboard */,
 				75493AC72A7BEE2C006FB64E /* Info.plist */,
-				75493AEB2A7BF9B5006FB64E /* StoreListController.swift */,
 			);
 			path = StoreList;
 			sourceTree = "<group>";

@@ -13,9 +13,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let _ = (scene as? UIWindowScene) else { return }
-        
-        
+        self.window = self.window ?? UIWindow()
+                self.window!.backgroundColor = UIColor(red: 0, green: 0.298, blue: 0.62, alpha: 1)
+                self.window!.rootViewController = StoreListController()
+                self.window!.makeKeyAndVisible()
+                guard scene is UIWindowScene else { return }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

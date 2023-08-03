@@ -10,7 +10,7 @@
         <!--Store List-->
         <scene sceneID="xiT-rf-eS1">
             <objects>
-                <tableViewController title="Store List" id="dTV-nY-JVB" customClass="StoreListController" customModule="StoreList" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="StoreListController" title="Store List" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dTV-nY-JVB" customClass="StoreListController" customModule="StoreList" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="pcl-NZ-4hX">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Store list" id="jvn-EW-S4G">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="KCy-gR-zJ6"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cmx-hn-ZlZ">
+                            <connections>
+                                <action selector="addNewItems:" destination="dTV-nY-JVB" id="r6m-rt-BOr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k4G-Nd-gBv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
