@@ -1,9 +1,3 @@
-//
-//  ViewController.swift
-//  StoreList
-//
-//  Created by Andrei Bezlepkin on 3.08.23.
-//
 
 import UIKit
 
