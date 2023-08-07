@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7523A00A2A810E5400F4B653 /* TextPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7523A0092A810E5400F4B653 /* TextPicker.swift */; };
 		75493ABA2A7BEE2A006FB64E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75493AB92A7BEE2A006FB64E /* AppDelegate.swift */; };
 		75493ABC2A7BEE2A006FB64E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75493ABB2A7BEE2A006FB64E /* SceneDelegate.swift */; };
 		75493AC32A7BEE2C006FB64E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75493AC22A7BEE2C006FB64E /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7523A0092A810E5400F4B653 /* TextPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPicker.swift; sourceTree = "<group>"; };
 		75493AB62A7BEE2A006FB64E /* StoreList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75493AB92A7BEE2A006FB64E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75493ABB2A7BEE2A006FB64E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7523A0082A810E2700F4B653 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		75493AAD2A7BEE2A006FB64E = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +110,7 @@
 			children = (
 				7558AF3C2A7D07C1007EB1DF /* Info.plist */,
 				7558AF352A7CE4DE007EB1DF /* UI */,
+				7523A0082A810E2700F4B653 /* Models */,
 				7558AF342A7CE4B7007EB1DF /* Application */,
 				7558AF332A7CE4AA007EB1DF /* Support */,
 				7558AF322A7CE496007EB1DF /* Helpers */,
@@ -155,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				75493AEB2A7BF9B5006FB64E /* StoreListController.swift */,
+				7523A0092A810E5400F4B653 /* TextPicker.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -298,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75493ABA2A7BEE2A006FB64E /* AppDelegate.swift in Sources */,
+				7523A00A2A810E5400F4B653 /* TextPicker.swift in Sources */,
 				75493AEC2A7BF9B5006FB64E /* StoreListController.swift in Sources */,
 				7558AF382A7CE508007EB1DF /* UINavigationController + Extentions.swift in Sources */,
 				75493ABC2A7BEE2A006FB64E /* SceneDelegate.swift in Sources */,
