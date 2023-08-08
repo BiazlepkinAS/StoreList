@@ -5,13 +5,15 @@
 //  Created by Andrei Bezlepkin on 3.08.23.
 //
 import SwiftUI
+import Foundation
 import UIKit
 
-var storelist: [String] = ["1","2","3","4","5","6"]
+//var storelist: [String] = ["1","2","3","4","5","6"]
 
 class StoreListController: UINavigationController, UITableViewDelegate, UITableViewDataSource {
     
     let screenSize = UIScreen.main.bounds.size
+    var model = Model()
     
     private lazy var titleLAbel: UILabel = {
         let label = UILabel()
@@ -55,7 +57,7 @@ class StoreListController: UINavigationController, UITableViewDelegate, UITableV
         return table
     }()
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBar.isHidden = true
@@ -74,7 +76,7 @@ class StoreListController: UINavigationController, UITableViewDelegate, UITableV
         
         view.addSubview(titleLAbel)
         titleLAbel.translatesAutoresizingMaskIntoConstraints = false
-//        titleLAbel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 6).isActive = true
+        //        titleLAbel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 6).isActive = true
         titleLAbel.centerYAnchor.constraint(equalTo: addButton.centerYAnchor).isActive = true
         titleLAbel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         titleLAbel.widthAnchor.constraint(equalToConstant: 200).isActive = true
@@ -100,31 +102,32 @@ class StoreListController: UINavigationController, UITableViewDelegate, UITableV
     
     @objc func addButtonTapped() {
         TextPicker().showPicker(in: self) { [weak self] text in
-            storelist.append(text)
+            self?.model.addItem(title: text)
             self?.listTableView.reloadData()
         }
     }
     
     // MARK: - Table view data source
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return storelist.count
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return model.items.count
     }
-
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         var configuration = UIListContentConfiguration.cell()
-        configuration.text = storelist[indexPath.row]
+        
+        configuration.text = model.items[indexPath.row].title
+        configuration.secondaryText = model.items[indexPath.row].date.formatted(date: .complete, time: .shortened)
+        
+        cell.accessoryType = model.items[indexPath.row].isCompleted ? .checkmark : .none
         cell.contentConfiguration = configuration
         cell.backgroundColor = .clear
         return cell
     }
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .normal, title: "Rename") { _, _, completion in
-//            storelist[indexPath.row] = "Rename value"
-            
             TextPicker().showPicker(in: self) { [weak self] text in
-                storelist.remove(at: indexPath.row)
-                storelist.insert(text, at: indexPath.row)
+                self?.model.renameItem(atIndex: indexPath.row, newTitle: text)
                 self?.listTableView.reloadRows(at: [indexPath], with: .automatic)
                 completion(true)
             }
@@ -135,11 +138,16 @@ class StoreListController: UINavigationController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let action = UIContextualAction(style: .destructive, title: "Delete") { _, _, completion in
-            storelist.remove(at: indexPath.row)
+            self.model.deleteItem(atIndex: indexPath.row)
             self.listTableView.deleteRows(at: [indexPath], with: .automatic)
             completion(true)
         }
         return UISwipeActionsConfiguration(actions: [action])
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        model.toggleItems(atIndex: indexPath.row)
+        listTableView.reloadRows(at: [indexPath], with: .automatic)
     }
 }
 

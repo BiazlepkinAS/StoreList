@@ -17,6 +17,7 @@
 		75493ADD2A7BEE2C006FB64E /* StoreListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75493ADC2A7BEE2C006FB64E /* StoreListUITestsLaunchTests.swift */; };
 		75493AEC2A7BF9B5006FB64E /* StoreListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75493AEB2A7BF9B5006FB64E /* StoreListController.swift */; };
 		7558AF382A7CE508007EB1DF /* UINavigationController + Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558AF372A7CE508007EB1DF /* UINavigationController + Extentions.swift */; };
+		75673C302A8270AA000D9BE7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75673C2F2A8270AA000D9BE7 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		75493AEB2A7BF9B5006FB64E /* StoreListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListController.swift; sourceTree = "<group>"; };
 		7558AF372A7CE508007EB1DF /* UINavigationController + Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController + Extentions.swift"; sourceTree = "<group>"; };
 		7558AF3C2A7D07C1007EB1DF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75673C2F2A8270AA000D9BE7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		7523A0082A810E2700F4B653 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				75673C2F2A8270AA000D9BE7 /* Model.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				75493ABA2A7BEE2A006FB64E /* AppDelegate.swift in Sources */,
 				7523A00A2A810E5400F4B653 /* TextPicker.swift in Sources */,
 				75493AEC2A7BF9B5006FB64E /* StoreListController.swift in Sources */,
+				75673C302A8270AA000D9BE7 /* Model.swift in Sources */,
 				7558AF382A7CE508007EB1DF /* UINavigationController + Extentions.swift in Sources */,
 				75493ABC2A7BEE2A006FB64E /* SceneDelegate.swift in Sources */,
 			);
