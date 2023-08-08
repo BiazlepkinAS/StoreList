@@ -17,15 +17,13 @@ class StoreListController: UINavigationController, UITableViewDelegate, UITableV
     
     private lazy var titleLAbel: UILabel = {
         let label = UILabel()
-        label.textColor = .systemBlue
         label.textAlignment = .center
-        label.numberOfLines = 0
         label.text = "Shopping list"
         label.font = UIFont.systemFont(ofSize: 15)
+        label.textColor = .systemBlue
         label.layer.cornerRadius = 10
         label.layer.borderColor = UIColor.systemBlue.cgColor
         label.layer.borderWidth = 1
-        label.textColor = .black
         label.textAlignment = .center
         return label
     }()
@@ -63,6 +61,7 @@ class StoreListController: UINavigationController, UITableViewDelegate, UITableV
         navigationBar.isHidden = true
         listTableView.delegate = self
         listTableView.dataSource = self
+        view.backgroundColor = .secondarySystemBackground
         configUI()
     }
     
@@ -76,7 +75,6 @@ class StoreListController: UINavigationController, UITableViewDelegate, UITableV
         
         view.addSubview(titleLAbel)
         titleLAbel.translatesAutoresizingMaskIntoConstraints = false
-        //        titleLAbel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 6).isActive = true
         titleLAbel.centerYAnchor.constraint(equalTo: addButton.centerYAnchor).isActive = true
         titleLAbel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         titleLAbel.widthAnchor.constraint(equalToConstant: 200).isActive = true
@@ -89,14 +87,13 @@ class StoreListController: UINavigationController, UITableViewDelegate, UITableV
         backImage.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 6).isActive = true
         backImage.trailingAnchor.constraint(equalTo:  view.safeAreaLayoutGuide.trailingAnchor, constant: -6).isActive = true
         backImage.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, constant: -screenSize.height/2.5).isActive = true
-        //        backImage.widthAnchor.constraint(equalToConstant: 100).isActive = true
+
         view.addSubview(listTableView)
         listTableView.translatesAutoresizingMaskIntoConstraints = false
         listTableView.topAnchor.constraint(equalTo: addButton.bottomAnchor, constant: 0).isActive = true
         listTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 6).isActive = true
         listTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -6).isActive = true
         listTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -6).isActive = true
-        
     }
     
     
@@ -115,13 +112,11 @@ class StoreListController: UINavigationController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         var configuration = UIListContentConfiguration.cell()
-        
         configuration.text = model.items[indexPath.row].title
         configuration.secondaryText = model.items[indexPath.row].date.formatted(date: .complete, time: .shortened)
-        
         cell.accessoryType = model.items[indexPath.row].isCompleted ? .checkmark : .none
         cell.contentConfiguration = configuration
-        cell.backgroundColor = .clear
+        cell.backgroundColor = .secondarySystemBackground
         return cell
     }
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
