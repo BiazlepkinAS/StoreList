@@ -1,2 +1,2 @@
 # StoreList
-simple ToDo List
+simple ToDo List for mySelf
